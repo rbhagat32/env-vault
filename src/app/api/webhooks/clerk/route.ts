@@ -54,7 +54,7 @@ export async function POST(request: Request) {
     }
 
     return new Response("Success", { status: 200 });
-  } catch (err: any) {
+  } catch (err: Error | unknown) {
     console.error("❌ Webhook verification or handling failed:", err);
     return new Response("Webhook verification failed", { status: 400 });
   }
