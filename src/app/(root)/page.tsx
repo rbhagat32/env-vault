@@ -1,11 +1,9 @@
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { NavBar } from "@/components/custom/navbar";
 
 export default function Page() {
   return (
-    <div>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </div>
+    <main className="container mx-auto">
+      <NavBar />
+    </main>
   );
 }
