@@ -1,14 +1,13 @@
-import { Menu } from "lucide-react";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 
 interface MenuItem {
@@ -34,7 +33,6 @@ export const NavBar = ({
     title: "Env Vault",
   },
   menu = [
-    { title: "Home", url: "#" },
     {
       title: "Products",
       url: "/",
@@ -54,7 +52,7 @@ export const NavBar = ({
   ],
 }: Navbar1Props) => {
   return (
-    <section className="py-4">
+    <section className="p-4">
       <div className="container">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
@@ -72,7 +70,9 @@ export const NavBar = ({
           </div>
           <div className="flex gap-2">
             <SignedOut>
-              <SignInButton />
+              <Button asChild>
+                <SignInButton />
+              </Button>
             </SignedOut>
 
             <SignedIn>
@@ -84,7 +84,7 @@ export const NavBar = ({
         </nav>
 
         {/* Mobile Menu */}
-        <div className="block px-4 lg:hidden">
+        <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
@@ -113,7 +113,9 @@ export const NavBar = ({
 
                   <div className="flex flex-col gap-3">
                     <SignedOut>
-                      <SignInButton />
+                      <Button asChild>
+                        <SignInButton />
+                      </Button>
                     </SignedOut>
 
                     <SignedIn>
@@ -135,12 +137,12 @@ export const NavBar = ({
 const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.title}>
-      <NavigationMenuLink
+      <Link
         href={item.url}
         className="bg-background hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors"
       >
         {item.title}
-      </NavigationMenuLink>
+      </Link>
     </NavigationMenuItem>
   );
 };
