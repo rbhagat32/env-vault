@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 export const metadata: Metadata = {
   title: "Env Vault",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <body className="dark antialiased">{children}</body>
       </html>
