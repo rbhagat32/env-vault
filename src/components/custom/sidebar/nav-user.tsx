@@ -53,7 +53,7 @@ export function NavUser({
             <SignOutButton>
               <DropdownMenuItem className="cursor-pointer">
                 <LogOutIcon />
-                Logout
+                Sign out
               </DropdownMenuItem>
             </SignOutButton>
           </DropdownMenuContent>
