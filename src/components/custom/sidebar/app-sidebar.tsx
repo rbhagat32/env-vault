@@ -1,7 +1,7 @@
 import {
   Sidebar,
   SidebarContent as ShadCNSidebarContent,
-  SidebarFooter,
+  SidebarFooter as ShadCNSidebarFooter,
   SidebarHeader as ShadCNSidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
@@ -28,9 +28,9 @@ export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sideb
         <SidebarContent />
       </ShadCNSidebarContent>
 
-      <SidebarFooter>
+      <ShadCNSidebarFooter>
         <SidebarUserInfo user={user} />
-      </SidebarFooter>
+      </ShadCNSidebarFooter>
 
       <SidebarRail />
     </Sidebar>

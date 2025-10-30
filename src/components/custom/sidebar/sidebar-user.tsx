@@ -23,7 +23,7 @@ export function SidebarUserInfo({
       onClick={() => openUserProfile()}
     >
       <Avatar className="h-8 w-8 rounded-lg">
-        <AvatarImage src={user.avatar} alt={user.name} className="rounded-full" />
+        <AvatarImage src={user.avatar} alt={user.name} />
       </Avatar>
       <div className="grid flex-1 text-left text-sm leading-tight">
         <span className="truncate font-medium">{user.name}</span>
