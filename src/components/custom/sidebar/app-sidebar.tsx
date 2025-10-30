@@ -5,10 +5,10 @@ import {
   SidebarHeader as ShadCNSidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { NavUser } from "@/components/custom/sidebar/nav-user";
-import { currentUser } from "@clerk/nextjs/server";
 import { SidebarHeader } from "@/components/custom/sidebar/sidebar-header";
 import { SidebarContent } from "@/components/custom/sidebar/sidebar-content";
+import { SidebarUserInfo } from "@/components/custom/sidebar/sidebar-user";
+import { currentUser } from "@clerk/nextjs/server";
 
 export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const loggedInUser = await currentUser();
@@ -29,7 +29,7 @@ export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sideb
       </ShadCNSidebarContent>
 
       <SidebarFooter>
-        <NavUser user={user} />
+        <SidebarUserInfo user={user} />
       </SidebarFooter>
 
       <SidebarRail />

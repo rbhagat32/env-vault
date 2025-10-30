@@ -15,7 +15,7 @@ import {
 import { SignOutButton, UserButton } from "@clerk/nextjs";
 import { ChevronsUpDown, LogOut as LogOutIcon } from "lucide-react";
 
-export function NavUser({
+export function SidebarUserInfo({
   user,
 }: {
   user: {
