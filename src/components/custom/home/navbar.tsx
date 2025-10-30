@@ -8,6 +8,7 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface MenuItem {
@@ -59,7 +60,13 @@ export const NavBar = ({
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
+              <Image
+                src={logo.src}
+                className="max-h-8 dark:invert"
+                alt={logo.alt}
+                width={40}
+                height={40}
+              />
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </Link>
             <div className="flex items-center">
@@ -88,7 +95,13 @@ export const NavBar = ({
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
+              <Image
+                src={logo.src}
+                className="max-h-8 dark:invert"
+                alt={logo.alt}
+                width={40}
+                height={40}
+              />
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </Link>
             <Sheet>
@@ -101,7 +114,13 @@ export const NavBar = ({
                 <SheetHeader>
                   <SheetTitle>
                     <Link href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
+                      <Image
+                        src={logo.src}
+                        className="max-h-8 dark:invert"
+                        alt={logo.alt}
+                        width={40}
+                        height={40}
+                      />
                       <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
                     </Link>
                   </SheetTitle>
