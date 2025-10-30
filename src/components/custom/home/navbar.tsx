@@ -60,13 +60,7 @@ export const NavBar = ({
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <Image
-                src={logo.src}
-                className="max-h-8 dark:invert"
-                alt={logo.alt}
-                width={40}
-                height={40}
-              />
+              <Image src={logo.src} className="max-h-8" alt={logo.alt} width={20} height={20} />
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </Link>
             <div className="flex items-center">
@@ -95,13 +89,7 @@ export const NavBar = ({
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <Image
-                src={logo.src}
-                className="max-h-8 dark:invert"
-                alt={logo.alt}
-                width={40}
-                height={40}
-              />
+              <Image src={logo.src} className="max-h-8" alt={logo.alt} width={20} height={20} />
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </Link>
             <Sheet>
@@ -116,10 +104,10 @@ export const NavBar = ({
                     <Link href={logo.url} className="flex items-center gap-2">
                       <Image
                         src={logo.src}
-                        className="max-h-8 dark:invert"
+                        className="max-h-8"
                         alt={logo.alt}
-                        width={40}
-                        height={40}
+                        width={20}
+                        height={20}
                       />
                       <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
                     </Link>
