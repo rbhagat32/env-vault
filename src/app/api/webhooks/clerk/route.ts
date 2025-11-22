@@ -15,7 +15,7 @@ export async function POST(request: Request) {
       const name =
         event.data.first_name && event.data.last_name
           ? `${event.data.first_name} ${event.data.last_name}`
-          : event.data.first_name || event.data.last_name || "Unnamed User";
+          : event.data.first_name || event.data.last_name || "Unknown User";
 
       const email = event.data.email_addresses?.[0]?.email_address || "";
       const avatar = event.data.image_url || null;
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       const name =
         event.data.first_name && event.data.last_name
           ? `${event.data.first_name} ${event.data.last_name}`
-          : event.data.first_name || event.data.last_name || "Unnamed User";
+          : event.data.first_name || event.data.last_name || "Unknown User";
 
       const email = event.data.email_addresses?.[0]?.email_address || "";
       const avatar = event.data.image_url || null;
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
 
     return new Response("Success", { status: 200 });
   } catch (err: Error | unknown) {
-    console.error("❌ Webhook verification or handling failed:", err);
+    console.error("WEBHOOK -> Verification or handling failed:", err);
     return new Response("Webhook verification failed", { status: 400 });
   }
 }

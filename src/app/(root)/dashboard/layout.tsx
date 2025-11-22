@@ -3,7 +3,7 @@ import { AppSidebar } from "@/components/custom/sidebar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
-  title: "Dashboard - Env Vault",
+  title: "Dashboard",
   description: "Dashboard Page for Env Vault",
 };
 
