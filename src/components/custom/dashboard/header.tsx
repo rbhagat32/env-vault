@@ -12,7 +12,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <Image src="/logo.png" alt="Env Vault Logo" width={20} height={20} />
-          <h1>Env Vault</h1>
+          <h1 className="font-semibold">Env Vault</h1>
         </div>
       </div>
     </header>

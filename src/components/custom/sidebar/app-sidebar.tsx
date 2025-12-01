@@ -1,13 +1,13 @@
+import { SidebarContent } from "@/components/custom/sidebar/sidebar-content";
+import { SidebarHeader } from "@/components/custom/sidebar/sidebar-header";
+import { SidebarUserInfo } from "@/components/custom/sidebar/sidebar-user";
 import {
-  Sidebar,
   SidebarContent as ShadCNSidebarContent,
   SidebarFooter as ShadCNSidebarFooter,
   SidebarHeader as ShadCNSidebarHeader,
+  Sidebar,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { SidebarHeader } from "@/components/custom/sidebar/sidebar-header";
-import { SidebarContent } from "@/components/custom/sidebar/sidebar-content";
-import { SidebarUserInfo } from "@/components/custom/sidebar/sidebar-user";
 import { currentUser } from "@clerk/nextjs/server";
 
 export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
