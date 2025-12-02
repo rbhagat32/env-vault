@@ -1,3 +1,3 @@
 export function SidebarContent() {
-  return <div>skjbfkjesbkjf</div>;
+  return <div>Content</div>;
 }

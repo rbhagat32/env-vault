@@ -10,17 +10,10 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
 import { SignOutButton, useClerk } from "@clerk/nextjs";
+import { type User } from "@clerk/nextjs/server";
 import { ChevronsUpDown, LogOut as LogoutIcon, User as UserIcon } from "lucide-react";
 
-export function SidebarUserInfo({
-  user,
-}: {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-}) {
+export function SidebarUserInfo({ user }: { user: User | null }) {
   const { openUserProfile } = useClerk();
 
   return (
@@ -33,11 +26,13 @@ export function SidebarUserInfo({
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer border"
             >
               <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={user.avatar} alt={user.name} />
+                <AvatarImage src={user?.imageUrl ?? ""} alt="User Avatar" />
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate">{`${user?.firstName} ${user?.lastName}`}</span>
+                <span className="truncate text-xs font-light">
+                  {user?.emailAddresses[0]?.emailAddress}
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>

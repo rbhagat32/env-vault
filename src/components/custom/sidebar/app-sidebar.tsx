@@ -12,11 +12,6 @@ import { currentUser } from "@clerk/nextjs/server";
 
 export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const loggedInUser = await currentUser();
-  const user = {
-    name: loggedInUser?.fullName ?? "",
-    email: loggedInUser?.primaryEmailAddress?.emailAddress ?? "",
-    avatar: loggedInUser?.imageUrl ?? "",
-  };
 
   return (
     <Sidebar variant="floating" collapsible="offcanvas" {...props}>
@@ -29,7 +24,7 @@ export async function AppSidebar({ ...props }: React.ComponentProps<typeof Sideb
       </ShadCNSidebarContent>
 
       <ShadCNSidebarFooter>
-        <SidebarUserInfo user={user} />
+        <SidebarUserInfo user={JSON.parse(JSON.stringify(loggedInUser))} />
       </ShadCNSidebarFooter>
 
       <SidebarRail />
