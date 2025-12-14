@@ -1,6 +1,6 @@
-import { NavBar } from "@/components/custom/home/navbar";
+import { NavBar } from "@/components/custom/landing/navbar";
 
-export default function Page() {
+export default function LandingPage() {
   return (
     <main className="container mx-auto">
       <NavBar />

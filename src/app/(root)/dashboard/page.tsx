@@ -1,6 +1,6 @@
 import { Header } from "@/components/custom/dashboard/header";
 
-export default function Page() {
+export default function DashboardPage() {
   return (
     <>
       <Header />
